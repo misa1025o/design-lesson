@@ -3,6 +3,9 @@
     height: 150px;
 }
 
+/***************************
+    基本の色
+*/
 .cls-1,.cls-2,.cls-4{fill:#ff7354;}
 .cls-1,.cls-2,.cls-3,.cls-4{stroke:#ff7354;}
 .cls-1,.cls-3{stroke-linejoin:round;stroke-width:14px;}
@@ -11,19 +14,10 @@
 .cls-4{stroke-width:4px;}
 .cls-5{fill:#6bc259;}
 
+/***************************
+    hoverしたときに画像を変える
+*/
 
-/* #logo-symbol:hover #base>* {
-    fill: black;
-    stroke: black;
-}
-#logo-symbol:hover #outline > * {
-    stroke: black;
-    fill: white;
-}
-#logo-symbol:hover #parts > * {
-    stroke: black;
-    fill: black;
-} */
 #lids #open > * {
     display: none;
 }
