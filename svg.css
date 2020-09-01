@@ -1,0 +1,35 @@
+#logo-symbol {
+    width: 150px;
+    height: 150px;
+}
+
+.cls-1,.cls-2,.cls-4{fill:#ff7354;}
+.cls-1,.cls-2,.cls-3,.cls-4{stroke:#ff7354;}
+.cls-1,.cls-3{stroke-linejoin:round;stroke-width:14px;}
+.cls-2,.cls-4{stroke-miterlimit:10;}
+.cls-3,.cls-6{fill:#fff;}
+.cls-4{stroke-width:4px;}
+.cls-5{fill:#6bc259;}
+
+
+/* #logo-symbol:hover #base>* {
+    fill: black;
+    stroke: black;
+}
+#logo-symbol:hover #outline > * {
+    stroke: black;
+    fill: white;
+}
+#logo-symbol:hover #parts > * {
+    stroke: black;
+    fill: black;
+} */
+#lids #open > * {
+    display: none;
+}
+#logo-symbol:hover #lids #open > * {
+    display: inline-block;
+}
+#logo-symbol:hover #lids #close > * {
+    display: none;
+}
