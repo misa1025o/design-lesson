@@ -1,0 +1,241 @@
+@charset "UTF-8";
+/* 共通部分 */
+#logo-symbol .fill {
+  fill: #FF957E;
+}
+
+#logo-symbol .stroke {
+  stroke: #FF957E;
+}
+
+#logo-symbol .cls-1, #logo-symbol .cls-3 {
+  stroke-linejoin: round;
+  stroke-width: 14px;
+}
+
+#logo-symbol .cls-2, #logo-symbol .cls-4 {
+  stroke-miterlimit: 10;
+}
+
+#logo-symbol .cls-3, #logo-symbol .cls-6 {
+  fill: #fff;
+}
+
+#logo-symbol .cls-4 {
+  stroke-width: 4px;
+}
+
+#logo-symbol .cls-5 {
+  fill: #6bc259;
+}
+
+/* ぴょんぴょん */
+.zyago-animation {
+  -webkit-animation: pyonpyon 2s infinite;
+          animation: pyonpyon 2s infinite;
+}
+
+.zyago-animation:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.logo-trigger:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+@-webkit-keyframes pyonpyon {
+  0% {
+    -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+  }
+  5% {
+    -webkit-transform: translate(0px, -4px);
+            transform: translate(0px, -4px);
+  }
+  10% {
+    -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+  }
+  15% {
+    -webkit-transform: translate(0px, -8px);
+            transform: translate(0px, -8px);
+  }
+  20% {
+    -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+  }
+  25% {
+    -webkit-transform: translate(0px, -2px);
+            transform: translate(0px, -2px);
+  }
+  30% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes pyonpyon {
+  0% {
+    -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+  }
+  5% {
+    -webkit-transform: translate(0px, -4px);
+            transform: translate(0px, -4px);
+  }
+  10% {
+    -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+  }
+  15% {
+    -webkit-transform: translate(0px, -8px);
+            transform: translate(0px, -8px);
+  }
+  20% {
+    -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+  }
+  25% {
+    -webkit-transform: translate(0px, -2px);
+            transform: translate(0px, -2px);
+  }
+  30% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+/* hover時に表示切り替え */
+#lids #open > * {
+  display: none;
+}
+
+#logo-symbol:hover #lids #open > *,
+.logo-trigger:hover #lids #open > * {
+  display: inline-block;
+}
+
+#logo-symbol:hover #lids #close > *,
+.logo-trigger:hover #lids #close > * {
+  display: none;
+}
+
+.analyze-btn.logo-trigger:hover .stroke {
+  stroke: #FF7354;
+}
+
+.analyze-btn.logo-trigger:hover .fill {
+  fill: #FF7354;
+}
+
+/* 完了画面 */
+.complete-img .cls-1 {
+  fill: #f8c69f;
+}
+
+.complete-img .cls-2 {
+  fill: none;
+}
+
+.complete-img .cls-3 {
+  fill: #87c9a4;
+}
+
+.complete-img .cls-4 {
+  fill: #fff;
+}
+
+.complete-img .cls-5 {
+  fill: #9d9d9d;
+}
+
+.complete-img #fukidashi-question {
+  animation-name: pyokon;
+  -webkit-animation-name: pyokon;
+  animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0;
+}
+
+.complete-img #fukidashi-exclamation {
+  animation-name: pyokon;
+  -webkit-animation-name: pyokon;
+  animation-duration: 5s;
+  -webkit-animation-duration: 5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 0;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+@-webkit-keyframes pyokon {
+  4% {
+    opacity: 1;
+  }
+  5% {
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  6% {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  7% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  37.5% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes pyokon {
+  4% {
+    opacity: 1;
+  }
+  5% {
+    -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  6% {
+    -webkit-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  7% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+  }
+  37.5% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=svg.css.map */

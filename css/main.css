@@ -1,0 +1,397 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  text-align: center;
+  font-family: 'Lucida Grande','Segoe UI', "M PLUS Rounded 1c", 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','メイリオ', Meiryo,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h2 {
+  color: #8F8668;
+  font-size: 32px;
+  font-size: 3.2rem;
+  font-weight: normal;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FEFBF1;
+}
+
+.container {
+  padding: 10% 0 0;
+  margin: auto;
+}
+
+.position-fix {
+  position: relative;
+}
+
+.main-img-wrapper {
+  width: 172px;
+  height: 172px;
+  border-radius: 50%;
+  background-color: #FBF3CF;
+  margin: 32px auto 5%;
+  position: relative;
+}
+
+.main-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.back {
+  position: absolute;
+  width: 32px;
+  top: 5%;
+  left: 5%;
+}
+
+.btn {
+  font-size: 18px;
+  font-size: 1.8rem;
+  width: 45%;
+  border-radius: 30px;
+  padding: 12px 24px;
+  letter-spacing: 0.75px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #FF957E;
+  color: #fff;
+}
+
+.primary:hover, .primary:active {
+  background-color: #FF7354;
+}
+
+.primary:disabled {
+  background-color: #CCB1AB;
+}
+
+.primary a {
+  color: #fff;
+}
+
+.secondary {
+  border: 2px solid #FF957E;
+  color: #FF957E;
+}
+
+.secondary a {
+  color: #FF957E;
+}
+
+.secondary:hover, .secondary:active {
+  border: 2px solid #FF7354;
+  color: #FF7354;
+}
+
+.secondary:hover a, .secondary:active a {
+  color: #FF7354;
+}
+
+.secondary:disabled {
+  border: 2px solid #CCB1AB;
+  color: #CCB1AB;
+}
+
+.secondary:disabled a {
+  color: #CCB1AB;
+}
+
+.vertical-btn-wrapper {
+  margin-top: 64px;
+}
+
+.vertical-btn-wrapper .btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vertical-btn-wrapper .btn:not(:first-child) {
+  margin-top: 25px;
+}
+
+.horizontal-btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.horizontal-btn-wrapper .btn {
+  width: 28%;
+  min-width: 224px;
+}
+
+.horizontal-btn-wrapper .btn:not(:first-child) {
+  margin-left: 25px;
+}
+
+.subtitle {
+  margin: 24px 0 0;
+}
+
+/* 会議作成画面 */
+input {
+  height: 40px;
+  background-color: #F2F0EB;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: #6B685E;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+.room-info-wrapper {
+  max-width: 72rem;
+  margin: 32px auto 0;
+  padding: 35px 48px 40px;
+  border: 2px solid #EBE6D5;
+  border-radius: 9px;
+  background-color: #fff;
+}
+
+.room-info-wrapper input {
+  width: 270px;
+  margin-top: 5px;
+}
+
+.room-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.room-form {
+  margin-left: 40px;
+}
+
+.room-form .form-item-txt:not(:first-child) {
+  margin-top: 24px;
+}
+
+.self-monitor {
+  width: 340px;
+  height: 200px;
+  background-color: #6B685E;
+  border: none;
+}
+
+.analyze-btn {
+  background-color: #FF957E;
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  margin: -25px auto 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.analyze-btn .btn-label {
+  color: #fff;
+  position: absolute;
+  bottom: 15%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.analyze-btn .zyago {
+  width: 80%;
+  position: absolute;
+  top: -12%;
+  left: 5%;
+}
+
+/* 分析中 */
+.analyze-room-container {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.screen-wrapper {
+  width: calc(100vw - 280px);
+  height: 100vh;
+  background-color: #6B685E;
+  position: relative;
+}
+
+.yourself {
+  width: 80%;
+  height: 40%;
+  margin: 0 auto;
+  background-color: #707070;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.room-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.room-menu .menu-item {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #77756D;
+  margin: 0 10px;
+  position: relative;
+}
+
+.room-menu .menu-item:hover .item-description {
+  display: block;
+}
+
+.room-menu .menu-item-link {
+  width: 100%;
+  height: 100%;
+}
+
+.room-menu .item-description {
+  color: #fff;
+  background-color: #77756D;
+  border-radius: 4px;
+  vertical-align: middle;
+  padding: 8px 24px;
+  min-width: 132px;
+  min-height: 32px;
+  position: absolute;
+  left: 50%;
+  bottom: 72px;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  display: none;
+}
+
+.room-menu .item-description:after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  margin-left: -15px;
+  border: 12px solid transparent;
+  border-top: 12px solid #77756D;
+  z-index: 2;
+}
+
+.menu-item-icon {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.member-list-wrapper {
+  width: 280px;
+  height: 100vh;
+  background-color: #FEFBF1;
+  text-align: left;
+  padding: 40px 30px 20px;
+}
+
+.member-list-wrapper h3 {
+  color: #BEB495;
+}
+
+.member-list-wrapper .member-list {
+  margin-top: 20px;
+}
+
+.member-list-wrapper .member-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 4px;
+}
+
+.member-list-wrapper .member-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #FF957E;
+  position: relative;
+}
+
+.member-list-wrapper .member-icon img {
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.member-list-wrapper .member-name {
+  margin-left: 30px;
+}
+
+.complete-img {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+/*# sourceMappingURL=main.css.map */
