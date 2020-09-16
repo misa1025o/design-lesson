@@ -1,0 +1,459 @@
+
+$main-color: #FF957E;
+$main-active: #FF7354;
+$main-disabled: #CCB1AB;
+$background-color: #FEFBF1;
+$britest-gray: #F2F0EB;
+$middle-gray: #EBE6D5;
+$gray: #BEB495;
+$middle-dark-gray: #77756D;
+$dark-gray: #6B685E;
+$white: #fff;
+
+@mixin font-size($size: 16) {
+	font-size: $size + px;
+	font-size: ($size / 10)  + rem;
+}
+@mixin gyoza-circle($size: 172, $color: #FBF3CF) {
+    width: $size + px;
+    height: $size + px;
+    border-radius: 50%;
+    background-color: $color;
+}
+@mixin position-center() {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin description-baloon {
+    color: $white;
+    background-color: #77756D;
+    border-radius: 4px;
+    vertical-align: middle;
+    padding: 8px 24px;
+    white-space: nowrap; // 改行せずおさめたい
+    position: absolute;
+    display: none;
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -24px;
+        left: 50%;
+        margin-left: -15px;
+        border: 12px solid transparent;
+        border-top: 12px solid #77756D;
+        z-index: 2;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%; // 10px;
+}
+body {
+    text-align: center;
+    
+    // font-family: 'Lucida Grande','Segoe UI', "M PLUS Rounded 1c", 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','メイリオ', Meiryo,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+    font-family: 'Lucida Grande','Segoe UI', 'Noto Sans JP', 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','メイリオ', Meiryo,'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+    @include font-size(16);
+}
+ul {
+    list-style-type: none;
+
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    color: #8F8668;
+    @include font-size(32);
+    
+    font-weight: normal;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: $background-color;
+
+}
+.container {
+    padding: 10% 0 0;
+    margin: auto;
+}
+.position-fix {
+    position: relative;
+}
+.main-img-wrapper {
+    @include gyoza-circle();
+    margin: 32px auto 5%;
+    position: relative;
+}
+.main-img {
+    position: absolute;
+    @include position-center();
+}
+
+@mixin btn($width: 45%, $border-radius: 30px) {
+    @include font-size(18);
+    width: $width;
+    border-radius: $border-radius;
+    padding: 12px 24px;
+    letter-spacing: 0.75px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.back {
+    position: absolute;
+    width: 32px;
+    top: 5%;
+    left: 5%;
+}
+
+.btn {
+    @include btn;
+    max-width: 35rem;
+}
+.primary {
+    background-color: $main-color;
+    color: $white;
+
+    &:hover, &:active {
+        background-color: $main-active;
+    }
+    &:disabled {
+        background-color: $main-disabled;
+    }
+    a {
+        color: $white;
+    }
+}
+.secondary {
+    border: 2px solid $main-color;
+    color: $main-color;
+
+    a {
+        color: $main-color;
+    }
+    &:hover, &:active {
+        border: 2px solid $main-active;
+        color: $main-active;
+
+        a {
+            color: $main-active;
+        }
+    }
+    &:disabled {
+        border: 2px solid $main-disabled;
+        color: $main-disabled;
+
+        a {
+            color: $main-disabled;
+        }
+    }
+
+}
+.vertical-btn-wrapper {
+    margin-top: 64px;
+
+    .btn {
+        margin-left: auto;
+        margin-right: auto;
+
+        &:not(:first-child) {
+            margin-top: 25px;
+        }
+    }
+}
+.horizontal-btn-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+        width: 28%;
+        min-width: 224px;
+
+        &:not(:first-child) {
+            margin-left: 25px;
+        }
+    }
+}
+.subtitle {
+    margin: 24px 0 0;
+}
+
+/* 会議作成画面 */
+@mixin text-area {
+    height: 40px;
+    background-color: $britest-gray;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    @include font-size(16);
+}
+input {
+    @include text-area();
+}
+label {
+    display: block;
+    text-align: left;
+    color: $dark-gray;
+    @include font-size(16);
+}
+
+.room-info-wrapper {
+    max-width: 72rem;
+    margin: 32px auto 0;
+    padding: 35px 48px 40px;
+    border: 2px solid $middle-gray;
+    border-radius: 9px;
+    background-color: $white;
+
+    input {
+        width: 270px;
+        margin-top: 5px;
+    }
+
+}
+.room-info-container {
+    display: flex;
+}
+.room-form {
+    margin-left: 40px;
+
+    .form-item-txt {
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+    }
+}
+.self-monitor {
+    width: 340px;
+    height: 200px;
+    background-color: $dark-gray;
+    border: none;
+}
+.analyze-btn {
+    background-color: $main-color;
+    width: 148px;
+    height: 148px;
+    border-radius: 50%;
+    margin: -25px auto 0;
+    cursor: pointer;
+    position: relative;
+
+    .btn-label {
+        color: $white;
+        position: absolute;
+        bottom: 15%;
+        transform: translateX(-50%);
+        left: 50%;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+    .zyago {
+        width: 80%;
+        position: absolute;
+        top: -12%;
+        left: 5%;
+    }
+}
+
+/* 分析中 */
+.analyze-room-container {
+    padding: 0;
+    display: flex;
+}
+.screen-wrapper {
+    width: calc(100vw - 280px);
+    height: 100vh;
+    background-color: $dark-gray;
+
+    position: relative;
+}
+.yourself {
+    width: 80%;
+    height: 40%;
+    margin: 0 auto;
+    background-color: #707070;
+
+    position: absolute;
+    @include position-center();
+    top: 40%;
+}
+
+.room-menu {
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .menu-item {
+        @include gyoza-circle(56, $middle-dark-gray);
+        margin: 0 10px;
+        position: relative;
+
+        &:hover .item-description {
+            display: block;
+        }
+    }
+    
+    .menu-item-link {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+.item-description {
+    @include description-baloon();
+    left: 50%;
+    bottom: 72px;
+    transform: translate(-50%, 0);
+}
+.menu-item-icon {
+    width: 50%;
+    position: absolute;
+    @include position-center();
+    
+}
+.external-link {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+
+}
+
+/* ポップアップ */
+.popup-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+  }
+  
+  .popup-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+  }
+  
+  .popup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: #fff;
+    /* margin: 0 auto; */
+    padding: 32px 40px;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 24px;
+    }
+    p {
+        margin-bottom: 24px;
+    }
+    .room-id-copy {
+        margin-bottom: 40px;
+    }
+  }
+
+.room-id-wrapper {
+    position: relative;
+
+    .item-description {
+        bottom: 100px;
+    }
+}
+
+.room-id-copy {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    $icon-space: 40px;
+
+    .room-id-text {
+        @include text-area();
+        padding-right: $icon-space;
+    }
+    .clipboard {
+        width: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: ($icon-space - 13)/2;
+        background-color: black;
+        padding: 4px;
+    }
+}
+.normal {
+    width: 11.4rem;
+    height: 28px;
+    margin-left: auto;
+    font-size: 14px;
+    padding: 0;
+    border: 2px solid $dark-gray;
+    color: $dark-gray;
+}
+
+
+.member-list-wrapper {
+    width: 280px;
+    height: 100vh;
+    background-color: $background-color;
+    text-align: left;
+    padding: 40px 30px 20px;
+    
+
+    h3 {
+        color: $gray;
+    }
+    .member-list {
+        margin-top: 20px;
+    }
+    .member-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 4px;
+    }
+    .member-icon {
+        @include gyoza-circle(44, $main-color);
+        position: relative;
+
+        img {
+            width: 70%;
+            position: absolute;
+            @include position-center();
+        }
+    }
+    .member-name {
+        margin-left: 30px;
+
+    }
+}
+
+.complete-img {
+    width: 80%;
+    position: absolute;
+    @include position-center();
+}
