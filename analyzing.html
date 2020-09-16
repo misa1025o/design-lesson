@@ -6,10 +6,24 @@
 <link href="./css/main.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 
 </head>
 <body>
+    <div class="popup-wrapper">
+        <div class="popup-background">
+            <div class="popup-container">
+                <h2>メンバーを招待</h2>
+                <p>分析部屋に招待したいメンバーに<br>コードを共有しましょう</p>
+                <div class="room-id-copy">
+                    <div id="copyTarget" class="room-id-text">asdfghjkl;qwertyuiklasdfghj</div>
+                    <img src="img/ico_clipboard.svg" class="clipboard">
+                </div>
+                <div class="btn normal">とじる</div>
+            </div>
+        </div>
+    </div>
     <div class="wrapper">
         <div class="container analyze-room-container">
             <div class="screen-wrapper">
@@ -18,11 +32,11 @@
                     <li class="menu-item">
                         <div class="item-description">招待する</div>
                         <a class="menu-item-link" href="#">
-                            <img class="menu-item-icon" src="./img/ico_chart.svg">
+                            <img class="menu-item-icon" src="./img/ico_invite.svg">
                         </a>
                     </li>
                     <li class="menu-item">
-                        <div class="item-description">結果を見る</div>
+                        <div class="item-description">結果を見る<img class="external-link" src="img/ico_external_link.svg"></div>
                         <a class="menu-item-link" href="#">
                             <img class="menu-item-icon" src="./img/ico_chart.svg">
                         </a>
@@ -61,5 +75,6 @@
         </div>
     </div>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
