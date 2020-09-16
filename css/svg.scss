@@ -1,0 +1,116 @@
+/* 共通部分 */
+#logo-symbol {
+    .fill {fill:#FF957E;}
+    .stroke{stroke:#FF957E;}
+    .cls-1,.cls-3{stroke-linejoin:round;stroke-width:14px;}
+    .cls-2,.cls-4{stroke-miterlimit:10;}
+    .cls-3,.cls-6{fill:#fff;}
+    .cls-4{stroke-width:4px;}
+    .cls-5{fill:#6bc259;}
+}
+
+
+/* ぴょんぴょん */
+.zyago-animation {
+    animation: pyonpyon 2s infinite;
+  
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+.logo-trigger:hover {
+    animation-play-state: paused
+}
+@keyframes pyonpyon {
+    0% {
+        transform: translate(0px, 2px);
+    }
+    5% {
+        transform: translate(0px, -4px);
+    }
+    10% {
+        transform: translate(0px, 2px);
+    }
+    15% {
+        transform: translate(0px, -8px);
+    }
+    20% {
+        transform: translate(0px, 2px);
+    }
+    25% {
+        transform: translate(0px, -2px);
+    }
+    30% {
+        transform: translate(0px, 0px);
+    }
+}
+  
+  /* hover時に表示切り替え */
+  #lids #open > * {
+    display: none;
+  }
+  
+#logo-symbol:hover #lids #open > *,
+  .logo-trigger:hover #lids #open > * {
+    display: inline-block;
+}
+  
+#logo-symbol:hover #lids #close > *,
+.logo-trigger:hover #lids #close > * {
+    display: none;
+  }
+.analyze-btn {
+    &.logo-trigger:hover .stroke {
+        stroke: #FF7354;
+    }
+    &.logo-trigger:hover .fill {
+        fill: #FF7354;
+    }
+}
+
+/* 完了画面 */
+.complete-img {
+    .cls-1{fill:#f8c69f;}
+    .cls-2{fill:none;}
+    .cls-3{fill:#87c9a4;}
+    .cls-4{fill:#fff;}
+    .cls-5{fill:#9d9d9d;}
+    
+    // ぴょこんってするやつ
+    @mixin fukidashi-animation {
+        animation-name: pyokon;
+        -webkit-animation-name: pyokon;
+        animation-duration: 5s;
+        -webkit-animation-duration: 5s;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        opacity: 0;
+    }
+    #fukidashi-question {
+        @include fukidashi-animation();
+    }
+    #fukidashi-exclamation {
+        @include fukidashi-animation();
+        animation-delay: 2.5s;
+    }
+    @keyframes pyokon {
+        // ぴょこん
+        4% {
+            opacity: 1;
+        }
+        5%  { transform: scale(1.2, 1.2); transform-origin:center center; }
+        6% { transform: scale(.8, .8);  transform-origin:center center; }
+        7% { transform: scale(1, 1); transform-origin:center center; }
+        // きえる
+        37.5% {
+            opacity: 1;
+        }
+        40% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+}
