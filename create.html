@@ -7,10 +7,30 @@
 <link href="./css/svg.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
 
 
 </head>
 <body>
+    <div class="popup-wrapper">
+        <div class="popup-background" onclick="close_popup()"></div>
+        <div class="popup-container">
+            <h3>デバイス設定</h3>
+            <div class="device-select-wrapper">
+                <div id="camera-select" class="camera-select form-wrapper">
+                    <img class="form-icon" src="img/ico_clipboard.svg">
+                    <select class="form-content">
+                        <option value="camera1">Logitech HD Webcam C525(6d:20...</option>
+                        <option value="camera2">カメラ２</option>
+                    </select>
+                    <p class="annotation">※カメラを使用する他のアプリと併用すると<br>映像が映らない場合があります。</p>
+                </div>
+            </div>
+            <div class="btn normal" onclick="close_popup()">とじる</div>
+        </div>
+
+    </div>
     <div class="wrapper">
         <div class="container position-fix">
             <a href="index.html">
@@ -22,7 +42,23 @@
             </div>
             <div class="room-info-wrapper">
                 <div class="room-info-container">
-                    <div class="self-monitor"></div>
+                    <div class="self-monitor">
+                        <svg onclick="open_popup()" class="ico-gear" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 71.59 71.59">
+                            <g id="gear" class="">
+                                <path id="circle" class="cls-1" d="M35.8,10.8a25,25,0,1,0,25,25A25,25,0,0,0,35.8,10.8Zm0,38.78A13.79,13.79,0,1,1,49.58,35.8,13.78,13.78,0,0,1,35.8,49.58Z"/>
+                                <g id="teeth">
+                                    <rect class="cls-1" x="8.36" y="50.87" width="14.49" height="10.23" rx="4" transform="translate(-35.02 27.43) rotate(-45)"/>
+                                    <rect class="cls-1" x="48.74" y="10.49" width="14.49" height="10.23" rx="4" transform="translate(5.36 44.16) rotate(-45)"/>
+                                    <rect class="cls-1" y="30.68" width="14.49" height="10.23" rx="4"/>
+                                    <rect class="cls-1" x="57.1" y="30.68" width="14.49" height="10.23" rx="4"/>
+                                    <rect class="cls-1" x="10.49" y="8.36" width="10.23" height="14.49" rx="4" transform="translate(-6.46 15.61) rotate(-45)"/>
+                                    <rect class="cls-1" x="50.87" y="48.74" width="10.23" height="14.49" rx="4" transform="translate(-23.19 55.98) rotate(-45)"/>
+                                    <rect class="cls-1" x="30.68" width="10.23" height="14.49" rx="4"/>
+                                    <rect class="cls-1" x="30.68" y="57.1" width="10.23" height="14.49" rx="4"/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
                     <form class="room-form">
                         <div class="form-item-txt">
                             <label class="">分析会場の名前</label>
@@ -83,5 +119,6 @@
         </div>
     </div>
 
+    <script src="./js/main.js"></script>
 </body>
 </html>

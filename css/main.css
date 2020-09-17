@@ -40,7 +40,7 @@ h2 {
 }
 
 .container {
-  padding: 10% 0 0;
+  padding: 6% 0 0;
   margin: auto;
 }
 
@@ -165,13 +165,18 @@ h2 {
 
 /* 会議作成画面 */
 input {
-  height: 40px;
+  height: 50px;
   background-color: #F2F0EB;
-  border: none;
+  border: 2px solid #F2F0EB;
   border-radius: 5px;
   padding: 12px 20px;
   font-size: 16px;
   font-size: 1.6rem;
+}
+
+input:focus {
+  border: 2px solid #FF957E;
+  outline: 0;
 }
 
 label {
@@ -180,6 +185,37 @@ label {
   color: #6B685E;
   font-size: 16px;
   font-size: 1.6rem;
+}
+
+select {
+  height: 50px;
+  background-color: #F2F0EB;
+  border: 2px solid #F2F0EB;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.form-wrapper {
+  position: relative;
+  display: inline;
+}
+
+.form-wrapper .form-content {
+  padding-left: 4rem;
+}
+
+.form-wrapper .form-icon {
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  padding: 0.8rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0.4rem;
 }
 
 .room-info-wrapper {
@@ -210,11 +246,45 @@ label {
   margin-top: 24px;
 }
 
+.ico-gear .cls-1 {
+  fill: #6B685E;
+}
+
+.device-select-wrapper {
+  margin: 2.4rem auto;
+}
+
+.annotation {
+  font-size: 11px;
+  font-size: 1.1rem;
+  color: #BEB495;
+}
+
+.device-select-wrapper .annotation {
+  margin-top: 4px;
+  text-align: right;
+}
+
 .self-monitor {
   width: 340px;
   height: 200px;
   background-color: #6B685E;
   border: none;
+  position: relative;
+}
+
+.self-monitor .ico-gear {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.self-monitor .ico-gear:hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .analyze-btn {
@@ -294,6 +364,10 @@ label {
   background-color: #77756D;
   margin: 0 10px;
   position: relative;
+}
+
+.room-menu .menu-item:hover {
+  background-color: #999894;
 }
 
 .room-menu .menu-item:hover .item-description {
@@ -381,6 +455,11 @@ label {
   margin-bottom: 24px;
 }
 
+.popup-container h3 {
+  color: #77756D;
+  font-size: 16px;
+}
+
 .popup-container p {
   margin-bottom: 24px;
 }
@@ -404,9 +483,9 @@ label {
 }
 
 .room-id-copy .room-id-text {
-  height: 40px;
+  height: 50px;
   background-color: #F2F0EB;
-  border: none;
+  border: 2px solid #F2F0EB;
   border-radius: 5px;
   padding: 12px 20px;
   font-size: 16px;
@@ -443,10 +522,6 @@ label {
   padding: 40px 30px 20px;
 }
 
-.member-list-wrapper h3 {
-  color: #BEB495;
-}
-
 .member-list-wrapper .member-list {
   margin-top: 20px;
 }
@@ -476,6 +551,7 @@ label {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  top: 55%;
 }
 
 .member-list-wrapper .member-name {
