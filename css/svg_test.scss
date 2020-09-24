@@ -1,0 +1,200 @@
+// テスト用
+$main-color: #FF957E;
+
+@mixin box {
+    width: 40px;
+    height: 40px;
+    background-color: $main-color;
+}
+.horizontal {
+    display: flex;
+}
+.descending-zyago {
+    animation: descending 2s infinite;
+    @include box;
+    @keyframes descending {
+        // 初期位置　上のほう
+        0% {
+            transform: translateY(0);
+            animation-timing-function: cubic-bezier(0.65, 0.28, 0.74, 1.26);
+        }
+    
+        // 落下＆停止（行って戻る）
+        15% {
+            transform: translateY(80px);
+            
+        }
+    
+        // 落下
+        85% {
+            transform: translateY(80px);
+            // animation-timing-function: cubic-bezier(0.65, 0.28, 0.65, 1.53);
+        }
+        100% {
+            transform: translateY(160px);
+        }
+    }
+}
+.appear-zyago {
+    animation: appear 2s infinite;
+    @include box;
+
+    @keyframes appear {
+        // なにもない
+        0% {
+            // transform: translateY(0);
+            transform: scale(0);
+            animation-timing-function: cubic-bezier(1, 0.01, 0.82, 1.6);
+        }
+    
+        // 出現
+        20% {
+            transform: scale(1);
+        }
+    }
+}
+.pyonpyon-container {
+    // 横移動
+    margin-left: 100px;
+    animation: x-move 10s infinite linear;
+
+    .pyonpyon {
+        // ジャンプ
+        // @include box;
+        animation: pyonpyon 1s infinite;
+    }
+    #zya-go-kun path {
+        fill: $main-color;
+    }
+    
+}
+@keyframes x-move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(150px);
+    }
+}
+@keyframes pyonpyon {
+    $jump-height: 50px;
+    0% {
+        transform: translateY($jump-height);
+    }
+    45% {
+        // 頂点
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(1, 0.01, 0.82, 1.6);
+    }
+    95% {
+        // 着地
+        transform: translateY($jump-height) scale(1.1, 1);
+    }
+    100% {
+        transform: translateY($jump-height) scale(1, 1);
+    }
+}
+
+.nabe-wrapper {
+    margin: 24px;
+    $futa-height: 20px;
+
+    position: relative;
+
+    div {
+        margin: 0;
+    }
+
+    .inner-zyago {
+        position: absolute;
+        top: 5px;
+        left: 2px;
+
+        width: 40px;
+        fill: $main-color;
+
+        animation: pyokon .3s 6s forwards;
+        animation-timing-function: cubic-bezier(1, 0.01, 0.82, 1.6);
+    }
+    .futa-container {
+        position: absolute;
+        top: 0;
+
+        // パカ
+        animation: open .3s 6s forwards;
+        transform-origin: left bottom;
+
+        .futa {
+            // ブルブル
+            animation: buruburu 6s;
+
+            width: 60px;
+            height: $futa-height;
+
+            border-radius: $futa-height $futa-height 0 0;
+            background-color: gray;
+
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 8px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: gray;
+                top: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+                
+            }
+        }
+    }
+    .bottom-container {
+        position: absolute;
+
+        .bottom {
+            top: $futa-height;
+    
+            width: 60px;
+            height: 15px;
+    
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid darkgray;
+
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: '';
+                width: 20px;
+                height: 3px;
+
+                background-color: darkgray;
+                transform: translate(10px, -10px);
+                right: 60px;
+            }
+        }
+    
+    }
+}
+@keyframes buruburu {
+    0%, 10%, 30%, 40%, 60%, 70% {transform: translate(0px, 0px) rotateZ(0deg);}
+    1%, 11%, 31%, 41%, 61%, 71% {transform: translate(2px, 2px) rotateZ(1deg)}
+    2%, 12%, 32%, 42%, 62%, 72% {transform: translate(0px, 2px) rotateZ(0deg)}
+    3%, 13%, 33%, 43%, 63%, 73% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    4%, 14%, 44%, 44%, 64%, 74% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+@keyframes open {
+    0% {transform: none};
+    100% {transform: rotate(-30deg)};
+}
+@keyframes pyokon {
+    0% {
+        transform: none;
+    }
+    60%, 100% {
+        transform: translate(6px, -6px) rotate(-5deg);
+    }
+}
