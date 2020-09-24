@@ -114,3 +114,57 @@
     }
 
 }
+
+/* アニメーションテスト */
+#zya-go-kun {
+    path {
+        fill: #fff;
+    }
+}
+
+$width: 80px;
+$height: 36.6px;
+$bounce_height: $height*3;
+.bounce {
+    // animation: bounce 0.7s normal infinite ease-in-out;
+    // animation: bounce 0.7s normal infinite ease;
+    // animation: bounce 500ms alternate infinite ease;
+    animation: bounce 1300ms normal infinite ease;
+    // transform-origin: bottom;
+    transform-origin: bottom;
+  }
+  
+  @keyframes bounce {
+    0% {
+        transform: scale(1.2, 0.7) translateY($bounce_height);
+        animation-timing-function: var(--EASE_OUT_QUAD);
+    }
+    40% {
+        // 一回目飛ぶ
+        transform: scale(1, 1) translateY($bounce_height/4);
+        animation-timing-function: var(--EASE_IN_QUAD);
+    }
+    50% {
+        transform: scale(1.2, 0.7) translateY($bounce_height);
+        animation-timing-function: var(--EASE_OUT_QUAD);
+    }
+    90% {
+        // 二回目飛ぶ
+        transform: scale(1, 1) translateY($bounce_height/4);
+        animation-timing-function: var(--EASE_IN_QUAD);
+    }
+    100% {
+        transform: scale(1.2, 0.7) translateY($bounce_height);
+    }
+}
+
+.jump-bg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: $main-color;
+}
+
+
+
+
