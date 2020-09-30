@@ -82,11 +82,12 @@ h2 {
 .wrapper {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
     background-color: $background-color;
-
 }
 .container {
-    padding: 6% 0 0;
+    padding: 28px 0;
     margin: auto;
 }
 .position-fix {
@@ -115,9 +116,25 @@ h2 {
 
 .back {
     position: absolute;
-    width: 32px;
+    @include gyoza-circle(40, rgba(0, 0, 0, 0));
+    padding: 11px 8px;
     top: 5%;
     left: 5%;
+
+    &:hover {
+        background-color: #FBF3CF;
+        transition: background-color .2s ease;
+
+    }
+}
+@keyframes btn-scale {
+    from {
+        transform: scale(0, 0);
+        animation-timing-function: cubic-bezier(1, 0.01, 0.82, 1.6);
+    }
+    to {
+        transform: scale(1, 1);
+    }
 }
 
 .btn {
@@ -194,17 +211,18 @@ h2 {
 
 /* 会議作成画面 */
 @mixin form-style {
-    height: 50px;
     background-color: $britest-gray;
     border: 2px solid $britest-gray;
     border-radius: 5px;
-    padding: 12px 20px;
+    padding: 14px 24px;
     @include font-size(16);
 }
 input {
     @include form-style();
+    padding: 14px 24px;
 
     &:focus {
+        
         border: 2px solid $main-color;
         outline: 0;
     }
@@ -244,36 +262,36 @@ select {
 
 
 .room-info-wrapper {
-    max-width: 72rem;
-    margin: 32px auto 0;
-    padding: 35px 48px 40px;
-    border: 2px solid $middle-gray;
+    max-width: 490px;
+    margin: 0 auto;
+    padding: 24px 72px;
+    border: 2px solid #EBE6D5;
     border-radius: 9px;
-    background-color: $white;
+    background-color: #fff;
 
 
     input {
-        width: 270px;
-        margin-top: 5px;
+        width: 100%;
+        margin-top: 8px;
     }
 
 }
 .room-info-container {
-    display: flex;
+
 }
 .room-form {
-    margin-left: 40px;
+    margin-top: 28px;
 
     .form-item-txt {
         &:not(:first-child) {
-            margin-top: 24px;
+            margin-top: 16px;
         }
     }
 }
 .ico-gear {
 
     .cls-1 {
-        fill: $dark-gray;
+        fill: white;
     }
 }
 .device-select-wrapper {
@@ -289,6 +307,7 @@ select {
         text-align: right;
     }
 }
+
 .self-monitor {
     width: 340px;
     height: 200px;
@@ -300,41 +319,49 @@ select {
     .ico-gear {
         cursor: pointer;
         position: absolute;
-        top: 10px;
-        left: 10px;
-        background-color: rgba(255, 255, 255, 0.6);
-        border-radius: 50%;
-        padding: 8px;
+        top: 0px;
+        left: -35px;
+        background-color: $dark-gray;
+        border-radius: 50% 0 0 50%;
+        padding: 8px 13px 8px 8px;
+        // animation: btn-pyokon .3s forwards;
 
         &:hover {
-            background-color: rgba(255, 255, 255, 0.8);
+            animation: btn-pyokon .1s forwards;
         }
     }
 }
+@keyframes btn-pyokon {
+    from {
+        transform: translateX(0);
+        transition-timing-function: cubic-bezier(1, 0.01, 0.82, 2);
+    }
+    to {
+        transform: translateX(-5px);
+    }
+}
 .analyze-btn {
-    background-color: $main-color;
-    width: 148px;
-    height: 148px;
-    border-radius: 50%;
-    margin: -25px auto 0;
+    @include btn(342px, 35px);
+    @include font-size(18);
+    margin-top: 28px;
+
     cursor: pointer;
     position: relative;
 
     .btn-label {
-        color: $white;
-        position: absolute;
-        bottom: 15%;
-        transform: translateX(-50%);
-        left: 50%;
-        font-size: 1.8rem;
-        font-weight: bold;
+
     }
     .zyago {
-        width: 80%;
-        position: absolute;
-        top: -12%;
-        left: 5%;
+        height: 48px;
+        margin: 0 8px 0 -45px;
+        // top: -12%;
+        // left: 5%;
     }
+}
+.has-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 分析中 */
@@ -433,6 +460,7 @@ select {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     width: 50%;
+    max-width: 400px;
     background-color: #fff;
     /* margin: 0 auto; */
     padding: 32px 40px;
@@ -450,6 +478,7 @@ select {
     }
     .room-id-copy {
         margin-bottom: 40px;
+        width: 100%;
     }
   }
 
@@ -471,6 +500,7 @@ select {
     .room-id-text {
         @include form-style();
         padding-right: $icon-space;
+        text-align: left;
     }
     .clipboard {
         width: 20px;

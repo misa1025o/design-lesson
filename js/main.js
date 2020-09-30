@@ -27,8 +27,8 @@ $(function() {
 });
 
 function open_popup() {
-    $('.popup-wrapper').fadeIn();
+    $('.popup-wrapper').fadeIn(200);
 }
 function close_popup() {
-    $('.popup-wrapper').fadeOut();
+    $('.popup-wrapper').fadeOut(100);
 }
