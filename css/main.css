@@ -36,11 +36,17 @@ h2 {
 .wrapper {
   width: 100vw;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #FEFBF1;
 }
 
 .container {
-  padding: 6% 0 0;
+  padding: 28px 0;
   margin: auto;
 }
 
@@ -67,9 +73,45 @@ h2 {
 
 .back {
   position: absolute;
-  width: 32px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 11px 8px;
   top: 5%;
   left: 5%;
+}
+
+.back:hover {
+  background-color: #FBF3CF;
+  -webkit-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+}
+
+@-webkit-keyframes btn-scale {
+  from {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    -webkit-animation-timing-function: cubic-bezier(1, 0.01, 0.82, 1.6);
+            animation-timing-function: cubic-bezier(1, 0.01, 0.82, 1.6);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes btn-scale {
+  from {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+    -webkit-animation-timing-function: cubic-bezier(1, 0.01, 0.82, 1.6);
+            animation-timing-function: cubic-bezier(1, 0.01, 0.82, 1.6);
+  }
+  to {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
 }
 
 .btn {
@@ -165,13 +207,13 @@ h2 {
 
 /* 会議作成画面 */
 input {
-  height: 50px;
   background-color: #F2F0EB;
   border: 2px solid #F2F0EB;
   border-radius: 5px;
-  padding: 12px 20px;
+  padding: 14px 24px;
   font-size: 16px;
   font-size: 1.6rem;
+  padding: 14px 24px;
 }
 
 input:focus {
@@ -188,11 +230,10 @@ label {
 }
 
 select {
-  height: 50px;
   background-color: #F2F0EB;
   border: 2px solid #F2F0EB;
   border-radius: 5px;
-  padding: 12px 20px;
+  padding: 14px 24px;
   font-size: 16px;
   font-size: 1.6rem;
   cursor: pointer;
@@ -219,35 +260,29 @@ select {
 }
 
 .room-info-wrapper {
-  max-width: 72rem;
-  margin: 32px auto 0;
-  padding: 35px 48px 40px;
+  max-width: 490px;
+  margin: 0 auto;
+  padding: 24px 72px;
   border: 2px solid #EBE6D5;
   border-radius: 9px;
   background-color: #fff;
 }
 
 .room-info-wrapper input {
-  width: 270px;
-  margin-top: 5px;
-}
-
-.room-info-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 100%;
+  margin-top: 8px;
 }
 
 .room-form {
-  margin-left: 40px;
+  margin-top: 28px;
 }
 
 .room-form .form-item-txt:not(:first-child) {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .ico-gear .cls-1 {
-  fill: #6B685E;
+  fill: white;
 }
 
 .device-select-wrapper {
@@ -276,43 +311,75 @@ select {
 .self-monitor .ico-gear {
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  padding: 8px;
+  top: 0px;
+  left: -35px;
+  background-color: #6B685E;
+  border-radius: 50% 0 0 50%;
+  padding: 8px 13px 8px 8px;
 }
 
 .self-monitor .ico-gear:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-animation: btn-pyokon .1s forwards;
+          animation: btn-pyokon .1s forwards;
+}
+
+@-webkit-keyframes btn-pyokon {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition-timing-function: cubic-bezier(1, 0.01, 0.82, 2);
+            transition-timing-function: cubic-bezier(1, 0.01, 0.82, 2);
+  }
+  to {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+}
+
+@keyframes btn-pyokon {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition-timing-function: cubic-bezier(1, 0.01, 0.82, 2);
+            transition-timing-function: cubic-bezier(1, 0.01, 0.82, 2);
+  }
+  to {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
 }
 
 .analyze-btn {
-  background-color: #FF957E;
-  width: 148px;
-  height: 148px;
-  border-radius: 50%;
-  margin: -25px auto 0;
+  font-size: 18px;
+  font-size: 1.8rem;
+  width: 342px;
+  border-radius: 35px;
+  padding: 12px 24px;
+  letter-spacing: 0.75px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  font-size: 1.8rem;
+  margin-top: 28px;
   cursor: pointer;
   position: relative;
 }
 
-.analyze-btn .btn-label {
-  color: #fff;
-  position: absolute;
-  bottom: 15%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  left: 50%;
-  font-size: 1.8rem;
-  font-weight: bold;
+.analyze-btn .zyago {
+  height: 48px;
+  margin: 0 8px 0 -45px;
 }
 
-.analyze-btn .zyago {
-  width: 80%;
-  position: absolute;
-  top: -12%;
-  left: 5%;
+.has-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* 分析中 */
@@ -445,6 +512,7 @@ select {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 50%;
+  max-width: 400px;
   background-color: #fff;
   /* margin: 0 auto; */
   padding: 32px 40px;
@@ -466,6 +534,7 @@ select {
 
 .popup-container .room-id-copy {
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .room-id-wrapper {
@@ -483,14 +552,14 @@ select {
 }
 
 .room-id-copy .room-id-text {
-  height: 50px;
   background-color: #F2F0EB;
   border: 2px solid #F2F0EB;
   border-radius: 5px;
-  padding: 12px 20px;
+  padding: 14px 24px;
   font-size: 16px;
   font-size: 1.6rem;
   padding-right: 40px;
+  text-align: left;
 }
 
 .room-id-copy .clipboard {

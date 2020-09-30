@@ -30,11 +30,6 @@
 }
 
 /* ぴょんぴょん */
-.zyago-animation {
-  -webkit-animation: pyonpyon 2s infinite;
-          animation: pyonpyon 2s infinite;
-}
-
 .zyago-animation:hover {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
@@ -122,11 +117,11 @@
   display: none;
 }
 
-.analyze-btn.logo-trigger:hover .stroke {
+.analyze-btn.logo-trigger:hover #logo-symbol.stroke {
   stroke: #FF7354;
 }
 
-.analyze-btn.logo-trigger:hover .fill {
+.analyze-btn.logo-trigger:hover #logo-symbol.fill {
   fill: #FF7354;
 }
 

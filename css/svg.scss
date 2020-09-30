@@ -12,7 +12,7 @@
 
 /* ぴょんぴょん */
 .zyago-animation {
-    animation: pyonpyon 2s infinite;
+    // animation: pyonpyon 2s infinite;
   
     &:hover {
         animation-play-state: paused;
@@ -60,10 +60,10 @@
     display: none;
   }
 .analyze-btn {
-    &.logo-trigger:hover .stroke {
+    &.logo-trigger:hover #logo-symbol.stroke {
         stroke: #FF7354;
     }
-    &.logo-trigger:hover .fill {
+    &.logo-trigger:hover #logo-symbol.fill {
         fill: #FF7354;
     }
 }
@@ -162,7 +162,7 @@ $bounce_height: $height*3;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: $main-color;
+    background-color: #FF957E;
 }
 
 
